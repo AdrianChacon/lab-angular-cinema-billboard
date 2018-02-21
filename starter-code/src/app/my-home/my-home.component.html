@@ -1,0 +1,11 @@
+<div *ngFor="let m of listMovies" class="card">
+  <p>Sala {{m.id}}</p>
+  <img src="{{m.poster}}" style="height:150px">
+  <div class="container">
+    <a [routerLink]="['/movie/' + m.id]">
+      <h4>
+        <b>{{m.title}}</b>
+      </h4>
+    </a>
+  </div>
+</div>

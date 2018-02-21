@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import movies from '../sample-movies'
 
 export interface Movie {
     id: Number,
@@ -14,23 +15,23 @@ export interface Movie {
 }
 
 @Injectable()
-export class AlbertoContadorService {
-    constructor() { }
-    movies: Array<Movie>
-
+export class MoviesService {
+    private listOfMovies: Array<any> = movies
+    constructor() {}
+    
     getMovies() {
-        return this.movies;
+        return this.listOfMovies;
     }
 
     getMovie(id) {
         let encontrado = false;
         let i = 0;
         while (!encontrado) {
-            if (this.movies[i].id == id) {
+            if (this.listOfMovies[i].id == id)
                 encontrado = !encontrado;
-            }
-            i++
+            else
+                i++;
         }
-        return this.movies[i]
+        return this.listOfMovies[i]
     }
 }
