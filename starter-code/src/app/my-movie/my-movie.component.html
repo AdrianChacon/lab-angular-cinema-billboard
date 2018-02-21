@@ -1,3 +1,27 @@
-<p>
-  my-movie works!
-</p>
+<div class="row">
+  <div class="column">
+    <img src="{{movieThatIWant.poster}}" style="height:500px">
+  </div>
+  <div class="colum">
+    <h1>Sala {{movieThatIWant.id}} - {{movieThatIWant.title}}</h1>
+    <div>
+      <p>Genres</p>
+      <ul>
+        <li *ngFor="let g of movieThatIWant.genres">{{g}}</li>
+      </ul>
+    </div>
+    <div>
+      <label>Year - {{movieThatIWant.year}}</label>
+    </div>
+  <br>
+    <div>
+      <label>Actors</label>
+      <ul>
+        <li *ngFor="let a of movieThatIWant.actors">{{a}}</li>
+      </ul>
+    </div>
+    <span span style="width:25%; word-wrap:break-word; display:inline-block;">
+      <b>Synopsis</b>: {{movieThatIWant.synopsis}}</span>
+  </div>
+  <div><button (click)="goToHome()"> Go Home :) </button></div>
+</div>
